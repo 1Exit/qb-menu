@@ -9,7 +9,7 @@ local function openMenu(data)
     if not data or not next(data) then return end
 	for _,v in pairs(data) do
 		if v["icon"] then
-			local img = "59-inventory/html/"
+			local img = "qb-inventory/html/"
 			if QBCore.Shared.Items[tostring(v["icon"])] then
 				if not string.find(QBCore.Shared.Items[tostring(v["icon"])].image, "images/") then
 					img = img.."images/"
@@ -108,34 +108,34 @@ exports('closeMenu', closeMenu)
 exports('showHeader', showHeader)
 
 
-RegisterCommand("qbmenutest", function(source, args, raw)
-    openMenu({
-        {
-            header = "Main Title",
-            isMenuHeader = true, -- Set to true to make a nonclickable title
-        },
-        {
-            header = "Sub Menu Button",
-            txt = "This goes to a sub menu",
-            url = "https://media.discordapp.net/attachments/778996974497431563/883441553366978640/unknown.png",
-            params = {
-                event = "qb-menu:client:testMenu2",
-                args = {
-                    number = 1,
-                }
-            }
-        },
-        {
-            header = "Sub Menu Button",
-            txt = "This goes to a sub menu",
-            disabled = true,
-            -- hidden = true, -- doesnt create this at all if set to true
-            params = {
-                event = "qb-menu:client:testMenu2",
-                args = {
-                    number = 1,
-                }
-            }
-        },
-    })
-end)
+-- RegisterCommand("qbmenutest", function(source, args, raw)
+--     openMenu({
+--         {
+--             header = "Main Title",
+--             isMenuHeader = true, -- Set to true to make a nonclickable title
+--         },
+--         {
+--             header = "Sub Menu Button",
+--             txt = "This goes to a sub menu",
+--             url = "https://media.discordapp.net/attachments/778996974497431563/883441553366978640/unknown.png",
+--             params = {
+--                 event = "qb-menu:client:testMenu2",
+--                 args = {
+--                     number = 1,
+--                 }
+--             }
+--         },
+--         {
+--             header = "Sub Menu Button",
+--             txt = "This goes to a sub menu",
+--             disabled = true,
+--             -- hidden = true, -- doesnt create this at all if set to true
+--             params = {
+--                 event = "qb-menu:client:testMenu2",
+--                 args = {
+--                     number = 1,
+--                 }
+--             }
+--         },
+--     })
+-- end)
